@@ -1,0 +1,55 @@
+@tailwind utilities;
+
+:root {
+  --c-brand: #00c3b6;
+  --c-brand-light: #00c3b6;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+@media screen(xl) {
+  .page {
+    @apply mr-80;
+  }
+}
+
+.code-group__nav {
+  margin-top: .85rem;
+  margin-bottom: calc(-1.7rem - 6px);
+  padding-bottom: calc(1.7rem - 6px);
+  padding-left: 10px;
+  padding-top: 10px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: var(--code-bg-color);
+}
+
+.code-group__ul {
+  margin: auto 0;
+  padding-left: 0;
+  display: inline-flex;
+  list-style: none;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+.code-group__nav-tab {
+  border: 0;
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: .85em;
+  line-height: 1.4;
+  color: #ffffffe6;
+  font-weight: 600;
+}
+
+.code-group__nav-tab-active {
+    border-bottom: var(--c-brand) 1px solid;
+}
