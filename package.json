@@ -2,7 +2,7 @@
   "name": "paw_docs",
   "version": "0.0.1",
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev docs --host 0.0.0.0",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
     "test": "echo \"Error: no test specified\" && exit 1"

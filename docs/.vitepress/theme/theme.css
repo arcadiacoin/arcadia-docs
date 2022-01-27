@@ -53,3 +53,17 @@ li {
 .code-group__nav-tab-active {
     border-bottom: var(--c-brand) 1px solid;
 }
+
+a.nav-bar-title
+{
+	color: #fff !important;
+}
+header.nav-bar
+{
+	background: linear-gradient(45deg, #e21d80, #1dc8cd);
+}
+
+aside.sidebar
+{
+	background: #eff5f5 !important;
+}

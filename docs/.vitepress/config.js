@@ -42,9 +42,27 @@ export default {
 function getNodeSidebar() {
   return [
     {
+      text: 'Home',
+      children: [
+        { text: 'Install', link: '/' },
+      ]
+    },
+    {
+      text: 'Start',
+      children: [
+        { text: 'Beginner Examples', link: '/beginner/examples' },
+      ]
+    },
+    {
       text: 'Running a node',
       children: [
         { text: 'RPC Commands', link: '/node/rpc' },
+      ]
+    },
+    {
+      text: 'FAQ',
+      children: [
+        { text: 'Common Questions', link: '/faq/common' },
       ]
     }
   ]
