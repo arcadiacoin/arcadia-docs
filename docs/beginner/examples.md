@@ -208,7 +208,7 @@ var_dump($account_list->accounts);
 
 ### Raw Conversion Helper
 
-Here's a script that helps with the conversion of regular numbers into PAW and vice-versa
+Here's a script that helps with the conversion of RAW into PAW and vice-versa
 
 ```php
 <?php
