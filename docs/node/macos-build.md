@@ -1,3 +1,9 @@
+---
+title: MacOS source build
+description: How to build PAW node on a MacOS from source
+sidebarDepth: 2
+---
+
  # Build instructions for an arm64 (M1) MacOS build
  The following build instructions draw heavily from nano node's build instructions: https://docs.nano.org/integration-guides/build-options/
 
