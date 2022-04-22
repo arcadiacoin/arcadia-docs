@@ -56,6 +56,7 @@ function getNodeSidebar() {
     {
       text: 'Running a node',
       children: [
+        { text: 'Start', link: '/node/start' },
         { text: 'RPC Commands', link: '/node/rpc' },
         { text: 'MacOS Build', link: '/node/macos-build' },
       ]

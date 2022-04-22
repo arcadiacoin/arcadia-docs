@@ -1,0 +1,184 @@
+---
+title: Start running a node
+description: Reference on how to get started on running PAW
+sidebarDepth: 2
+---
+
+# Start
+
+This is a summary on how to get started running and using a PAW node.
+
+
+## Install
+
+Build PAW from source or get the latest linux build from:
+
+https://github.com/paw-digital/paw-node/releases
+
+## Adjusting config
+
+First create a blank config file:
+```
+./paw_node --generate_config rpc > config-rpc.toml
+./paw_node --generate_config node > config-node.toml
+mkdir ~/Paw/
+mv config-rpc.toml ~/Paw/config-rpc.toml
+mv config-node.toml ~/Paw/config-node.toml
+```
+
+To enable RPC control uncomment and modify the following 2 lines in ~/Paw/config-rpc.toml
+
+```
+address="::ffff:127.0.0.1"
+enable_control = true
+```
+
+To have the node automatically receive PAW the receive_minimum needs be uncommented and set in ~/Paw/config-node.toml with:
+```
+receive_minimum = "10000000000000000000000000000000"
+```
+this would set the minimum amount to 10,000 PAW ( amount is the RAW unit ). Any incoming transaction with a lower amount will not be received.
+
+## Ports
+
+The port 7046 should be blocked from the outside on the firewall. Enabling RPC controls allows everyone to control the node and access wallets. Binding it to the local IP 127.0.0.1 should prevent outside access but changes to the config by accident or other reasons can expose the RPC access to the node and pose a security risk.
+
+The port 7045 should be open or forwarded to the node. That's the peering port.
+
+## Start
+
+Start the node as a daemon with:
+```
+./paw_node --daemon
+```
+
+or to have it run in the background:
+```
+./paw_node --daemon > /dev/null 2> /dev/null &
+```
+
+
+## RPC examples
+
+### To receive the total block count of the ledger:
+```
+curl -d '{ "action" : "block_count" }' 127.0.0.1:7046
+```
+
+### To get sync status and and further network information:
+```
+curl -d '{ "action" : "telemetry" }' 127.0.0.1:7046
+```
+
+### To validate whether or not an account is valid:
+```
+curl -d '{ "action" : "validate_account_number", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+```
+
+### To check the balance of an account:
+```
+curl -d '{ "action" : "account_balance", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+```
+
+### To get the account history:
+```
+curl -d '{ "action" : "account_history", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+```
+
+### To get the info of a single block:
+```
+curl -d '{ "action": "block_info", "json_block": "true", "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" }' 127.0.0.1:7046
+```
+
+### To convert from PAW to the RAW unit:
+```
+curl -d '{ "action" : "raw_to_paw", "amount": "10000000000000000000000000000000" }' 127.0.0.1:7046
+```
+
+### To convert from RAW to the PAW unit:
+```
+curl -d '{ "action" : "paw_to_raw", "amount": "10000" }' 127.0.0.1:7046
+```
+
+## Sending a transaction
+
+
+### 1) A wallet is needed
+```
+curl -d '{ "action": "wallet_create"}' 'http://127.0.0.1:7076'
+```
+this will create a new wallet and return a wallet ID
+
+### 2) Backing up the wallet seed with:
+```
+./paw_node --wallet_decrypt_unsafe --wallet E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446
+```
+this will return the wallet seed
+
+### 3) An account needs to be created
+```
+curl -d '{ "action": "account_create", "wallet": "E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446" }' 'http://127.0.0.1:7076'
+```
+this will create and return a new account ( paw address )
+
+### To send a transaction:
+```
+curl -d '{ "action": "send", "wallet": "343EB24C735CCF60E12B9BD4EA70226519F438E0E9A8D1EDB4D2DE8E74D96637", "source": "paw_3n7k4zxf8qif4f9k61if6oimsfdiobfytynmaagx95fwzdcgbct7i3xmndba", "destination": "paw_1yj4r1ocw81pitn1xz5mzxuthne3g4ezfxg9n6sbtzcz6jdtggxo9wxieysx", "amount": "2700000000000000000000000000", "id": "f4c07f4e73fb4091fdb47e0e3bxa" }'  127.0.0.1:7046
+```
+
+wallet = the wallet containing the account
+
+source = the account to send PAW from
+
+destination = the account to send PAW to
+
+amount = PAW amount in RAW unit
+
+id = unique identifier for every transaction is required and helps preventing sending a transaction twice by accident
+
+
+## Receive a transaction
+
+
+If receive_minimum has been set the node will automatically receive incoming PAW.
+
+In case you rather want to do it manually or receive PAW that fall below the "receive_minimum" you can check for receivable PAW with:
+```
+curl -d '{"action":"receivable", "account":"paw_1qfe5u7bcm7qrpp9rhk9p7wyqw316om1ts7s4gm466nwy6ueniik1gzwcno8"}' 127.0.0.1:7046
+```
+this will return a list of incoming PAW ready to be received ( their block hashes )
+
+Each transaction ( block ) can be received with:
+```
+curl -g -d '{ "action": "receive", "wallet": "7A684D6DF9852D0826BA208FA2BE4BD673C049992CA229204F0E98B4A89D8F6X", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb", "block": "634BFB577065CDE5C0F6DD2074CC7E28B8D4EE4691B37647852376203C6AED6C" }' 127.0.0.1:7046
+```
+
+
+# Work Generation
+
+Transactions are near instant but each transaction ( receive and send ) requires some Proof-Of-Work to prevent spam transactions within the fee-less nature of the network.
+
+It is recommended to run a dedicated worker that does the work computation and ideally has access to a GPU to speed transactions up:
+
+The worker server can be found here:
+
+https://github.com/nanocurrency/nano-work-server
+
+After running the nano-work-server it listens for incoming work requests and must be added to the config-node.toml as a work peer.
+```
+work_peers = ["192.168.4.10:7000"]
+```
+
+Not running a dedicated worker can have the node become unresponsive for duration it sends or receives a transaction.
+
+Running a dedicated worker is optional but something to be considered if the amount of incoming and outgoing transactions is getting too high.
+
+
+___
+
+Another source for further documentation is at:
+
+https://docs.nano.org/ ( the original crypto-currency PAW derived of )
+
+Documentation on how to to build from source can also be taken from here but needs to be slightly adjusted to work with PAW (e.g. github source for build):
+https://docs.nano.org/integration-guides/build-options/
