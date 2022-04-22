@@ -33,6 +33,13 @@ address="::ffff:127.0.0.1"
 enable_control = true
 ```
 
+as well as the following line under the [RPC] category in ~/Paw/config-node.toml
+
+```
+enable = true
+```
+
+
 To have the node automatically receive PAW the receive_minimum needs be uncommented and set in ~/Paw/config-node.toml with:
 ```
 receive_minimum = "10000000000000000000000000000000"
@@ -43,7 +50,7 @@ this would set the minimum amount to 10,000 PAW ( amount is the RAW unit ). Any 
 
 The port 7046 should be blocked from the outside on the firewall. Enabling RPC controls allows everyone to control the node and access wallets. Binding it to the local IP 127.0.0.1 should prevent outside access but changes to the config by accident or other reasons can expose the RPC access to the node and pose a security risk.
 
-The port 7045 should be open or forwarded to the node. That's the peering port.
+The port 7045 should be open. That's the peering port.
 
 ## Start
 
@@ -174,11 +181,21 @@ Not running a dedicated worker can have the node become unresponsive for duratio
 Running a dedicated worker is optional but something to be considered if the amount of incoming and outgoing transactions is getting too high.
 
 
+# Tribe
+
+It's recommended to run the node as a voting node ( tribe ). Voting nodes tend receive broadcasted transactions faster than non-voting ones when they have 0.1% of the total PAW supply delegated to them but voting can take up more CPU resources.
+
+To have the node act also as a voting node uncomment and set the following line in ~/Paw/config-node.toml:
+```
+enable_voting = true
+```
+
+
 ___
 
 Another source for further documentation is at:
 
-https://docs.nano.org/ ( the original crypto-currency PAW derived of )
+https://docs.nano.org/ ( the crypto-currency PAW derived of )
 
-Documentation on how to to build from source can also be taken from here but needs to be slightly adjusted to work with PAW (e.g. github source for build):
+Documentation on how to to build from source can also be taken from here but needs to be slightly adjusted to work with PAW (e.g. the github source used for build):
 https://docs.nano.org/integration-guides/build-options/
