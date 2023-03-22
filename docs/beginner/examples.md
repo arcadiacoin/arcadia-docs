@@ -6,7 +6,7 @@
 ```php
 <?php
 
-// ---- SETTING PAW NODE ADDRESS ----
+// ---- SETTING ARCADIA NODE ADDRESS ----
 // enable_control=true must be set in the data/config-node.toml
 // address = "::ffff:127.0.0.1" should be set in the config-rpc.toml
 // Make sure no one else has access to the node or they can withdraw funds!
@@ -64,7 +64,7 @@ var_dump($account->account);
 ```php
 <?php
 
-// ---- SETTING PAW NODE ADDRESS ----
+// ---- SETTING ARCADIA NODE ADDRESS ----
 // enable_control=true must be set in the data/config-node.toml
 // address = "::ffff:127.0.0.1" should be set in the config-rpc.toml
 // Make sure no one else has access to the node or they can withdraw funds!
@@ -93,7 +93,7 @@ function curl ($post) {
 // After someone sent you NANO it's in a pending/receivable state until it's being confirmed by the recipient
 
 // Get a list of receivable transactions
-$post = '{"action": "receivable", "account": "paw_1111111111111111111111111111111111111111111111111117353trpda"}';
+$post = '{"action": "receivable", "account": "adia_1111111111111111111111111111111111111111111111111117353trpda"}';
 $receivable = json_decode(curl($post));
 var_dump($receivable);
 
@@ -102,7 +102,7 @@ if(isset($receivable->blocks) && !empty($receivable->blocks))
 {
 	foreach($receivable->blocks as $block)
 	{
-		$post = '{"action": "receive_pending", "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F", "account": "paw_1111111111111111111111111111111111111111111111111117353trpda", "block": "'.$block.'"}';
+		$post = '{"action": "receive_pending", "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F", "account": "adia_1111111111111111111111111111111111111111111111111117353trpda", "block": "'.$block.'"}';
 		$result = json_decode(curl($post));
 		var_dump($result);
 	}
@@ -115,7 +115,7 @@ if(isset($receivable->blocks) && !empty($receivable->blocks))
 ```php
 <?php
 
-// ---- SETTING PAW NODE ADDRESS ----
+// ---- SETTING ARCADIA NODE ADDRESS ----
 // enable_control=true must be set in the data/config-node.toml
 // address = "::ffff:127.0.0.1" should be set in the config-rpc.toml
 // Make sure no one else has access to the node or they can withdraw funds!
@@ -143,9 +143,9 @@ function curl ($post) {
 
 // Sending a transaction
 $from_wallet = '000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F';
-$from_account = 'paw_1111111111111111111111111111111111111111111111111117353trpda';
+$from_account = 'adia_1111111111111111111111111111111111111111111111111117353trpda';
 $amount = 100000000000; // amount in raw
-$to_account = 'paw_2222222222222222222222222222222222222222222222222227353trpda';
+$to_account = 'adia_2222222222222222222222222222222222222222222222222227353trpda';
 $uniq_id = 'uniq_tx_1'; // change the uniq id with every tx
 
 $post = '{"action": "send", "wallet":"'.$from_wallet.'", "source":"'.$from_account.'", "destination":"'.$to_account.'", "amount":"'.$amount.'", "id": "'.$uniq_id.'"}';
@@ -157,7 +157,7 @@ var_dump($result);
 ```php
 <?php
 
-// ---- SETTING PAW NODE ADDRESS ----
+// ---- SETTING ARCADIA NODE ADDRESS ----
 // enable_control=true must be set in the data/config-node.toml
 // address = "::ffff:127.0.0.1" should be set in the config-rpc.toml
 // Make sure no one else has access to the node or they can withdraw funds!
@@ -193,7 +193,7 @@ $block_count = json_decode(curl($post));
 var_dump($block_count);
 
 // Check balance
-$post = '{"action": "account_balance", "account":"paw_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}';
+$post = '{"action": "account_balance", "account":"adia_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"}';
 $balance = json_decode(curl($post));
 var_dump($balance->balance);
 var_dump($balance->pending);
@@ -208,20 +208,21 @@ var_dump($account_list->accounts);
 
 ### Raw Conversion Helper
 
-Here's a script that helps with the conversion of RAW into PAW and vice-versa
+Here's a script that helps with the conversion of RAW into ADIA and vice-versa
 
 ```php
 <?php
-	class PawHelperException extends Exception{}
-	class PawHelper
+	class ArcadiaHelperException extends Exception{}
+	class ArcadiaHelper
 	{
 		// *
 		// *  Constants
 		// *
 		
 		const RAWS = [
-			 'NANO' =>    '1000000000000000000000000000000',
+			 'ADIA' =>     '10000000000000000000000000000000000'
 			 'PAW' =>     '1000000000000000000000000000'
+			 'NANO' =>    '1000000000000000000000000000000',
 		];
 		
 		const PREAMBLE_HEX = '0000000000000000000000000000000000000000000000000000000000000006';
@@ -236,7 +237,7 @@ Here's a script that helps with the conversion of RAW into PAW and vice-versa
 		public static function den2raw($amount, string $denomination): string
 		{
 			if (!array_key_exists($denomination, self::RAWS)) {
-				throw new PawHelperException("Invalid denomination: $denomination");
+				throw new ArcadiaHelperException("Invalid denomination: $denomination");
 			}
 			
 			$raw_to_denomination = self::RAWS[$denomination];
@@ -269,7 +270,7 @@ Here's a script that helps with the conversion of RAW into PAW and vice-versa
 		public static function raw2den(string $amount, string $denomination): string
 		{
 			if (!array_key_exists($denomination, self::RAWS)) {
-				throw new PawHelperException("Invalid denomination: $denomination");
+				throw new ArcadiaHelperException("Invalid denomination: $denomination");
 			}
 			
 			$raw_to_denomination = self::RAWS[$denomination];
@@ -314,10 +315,10 @@ Here's a script that helps with the conversion of RAW into PAW and vice-versa
 		public static function den2den($amount, string $denomination_from, string $denomination_to): string
 		{
 			if (!array_key_exists($denomination_from, self::RAWS)) {
-				throw new PawHelperException("Invalid source denomination: $denomination_from");
+				throw new ArcadiaHelperException("Invalid source denomination: $denomination_from");
 			}
 			if (!array_key_exists($denomination_to, self::RAWS)) {
-				throw new PawHelperException("Invalid target denomination: $denomination_to");
+				throw new ArcadiaHelperException("Invalid target denomination: $denomination_to");
 			}
 			
 			$raw = self::den2raw($amount, $denomination_from);
@@ -334,13 +335,13 @@ Here's a script that helps with the conversion of RAW into PAW and vice-versa
 <?php
 
 // Include Conversion Helper
-include('paw_conversion_helper.php');
+include('adia_conversion_helper.php');
 
-// From RAW to PAW
-PawHelper::raw2den(100000000000000, 'PAW')
+// From RAW to ADIA
+ArcadiaHelper::raw2den(100000000000000, 'ADIA')
 
-// From PAW to RAW
-PawHelper::den2raw(100000, 'PAW')
+// From ADIA to RAW
+ArcadiaHelper::den2raw(1000, 'ADIA')
 
 ?>
 ```

@@ -2,8 +2,8 @@ const MarkdownInclude = require('markdown-it-include')
 
 export default {
   lang: 'en-US',
-  title: 'PAW.digital Documentation',
-  description: 'Learn how to contribute to the network or develop your own applications on top of PAW.',
+  title: 'arcadiacoin.net Documentation',
+  description: 'Learn how to contribute to the network or develop your own applications on top of Arcadia.',
 
   head: [
     [
@@ -14,7 +14,7 @@ export default {
   ],
 
   themeConfig: {
-    repo: 'paw-digital/paw-docs',
+    repo: 'arcadiacoin/arcadia-docs',
     docsDir: 'docs',
     docsBranch: 'main',
     editLinks: true,

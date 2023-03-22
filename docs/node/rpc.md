@@ -1,6 +1,6 @@
 ---
 title: RPC Protocol
-description: Reference for the RPC commands available for the Paw node
+description: Reference for the RPC commands available for the Arcadia node
 sidebarDepth: 2
 ---
 
@@ -32,7 +32,7 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json 
 {
   "action": "account_balance",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```
 
@@ -58,7 +58,7 @@ Get number of blocks for a specific **account**
 ```json
 {
   "action": "account_block_count",
-  "account": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
 }
 ```
 
@@ -85,7 +85,7 @@ Get account number for the **public key**
 **Response:**
 ```json
 {
-  "account" : "paw_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
+  "account" : "adia_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
 }
 ```
 
@@ -101,7 +101,7 @@ Reports send/receive information for an account. Returns only **send & receive**
 ```json
 {
   "action": "account_history",
-  "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+  "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
   "count": "1"
 }
 ```
@@ -109,11 +109,11 @@ Reports send/receive information for an account. Returns only **send & receive**
 **Response:**
 ```json
 {
-  "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+  "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
   "history": [
     {
       "type": "send",
-      "account": "paw_38ztgpejb7yrm7rr586nenkn597s3a1sqiy3m3uyqjicht7kzuhnihdk6zpz",
+      "account": "adia_38ztgpejb7yrm7rr586nenkn597s3a1sqiy3m3uyqjicht7kzuhnihdk6zpz",
       "amount": "80000000000000000000000000000000000",
       "local_timestamp": "1551532723",
       "height": "60",
@@ -149,7 +149,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 ```json
 {
   "action": "account_info",
-  "account": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
 }
 ```
 
@@ -187,7 +187,7 @@ Boolean, false by default. Adds new return fields with prefix of `confirmed_` fo
 ```json
 {
   "action": "account_info",  
-  "account": "paw_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
+  "account": "adia_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
   "representative": "true",
   "weight": "true",
   "receivable": "true",
@@ -208,8 +208,8 @@ Boolean, false by default. Adds new return fields with prefix of `confirmed_` fo
     "account_version": "1",
     "confirmed_height": "22966",
     "confirmed_frontier": "80A6745762493FA21A22718ABFA4F635656A707B48B3324198AC7F3938DE6D4F",
-    "representative": "paw_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
-    "confirmed_representative": "paw_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
+    "representative": "adia_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
+    "confirmed_representative": "adia_1gyeqc6u5j3oaxbe5qy1hyz3q745a318kh8h9ocnpan7fuxnq85cxqboapu5",
     "weight": "11999999999999999918751838129509869131",
     "pending": "0",
     "receivable": "0",
@@ -226,7 +226,7 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 ```json
 {
   "action": "account_info",
-  "account": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
+  "account": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
   "representative": "true",
   "weight": "true",
   "receivable": "true"
@@ -245,7 +245,7 @@ Booleans, false by default. Additionally returns representative, voting weight, 
   "account_version": "1",
   "confirmation_height" : "28",
   "confirmation_height_frontier" : "34C70FCA0952E29ADC7BEE6F20381466AE42BD1CFBA4B7DFFE8BD69DF95449EB",
-  "representative": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
+  "representative": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3",
   "weight": "1105577030935649664609129644855132177",
   "pending": "2309370929000000000000000000000000",
   "receivable": "2309370929000000000000000000000000"
@@ -261,7 +261,7 @@ Get the public key for **account**
 ```json
 {
   "action": "account_key",
-  "account" : "paw_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
+  "account" : "adia_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
 }
 ```  
 **Response:**
@@ -280,13 +280,13 @@ Returns the representative for **account**
 ```json
 {
   "action": "account_representative",
-  "account": "paw_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi"
+  "account": "adia_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi"
 }
 ```  
 **Response:**
 ```json
 {
-  "representative" : "paw_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5"
+  "representative" : "adia_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5"
 }
 ```
 
@@ -299,7 +299,7 @@ Returns the voting weight for **account**
 ```json
 {
   "action": "account_weight",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```  
 **Response:**
@@ -323,19 +323,19 @@ Returns how many RAW is owned and how many have not yet been received by **accou
 ```json
 {
   "action": "accounts_balances",
-  "accounts": ["paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "paw_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"]
+  "accounts": ["adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "adia_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"]
 }
 ```  
 **Response:**
 ```json
 {
   "balances" : {
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
         "balance": "325586539664609129644855132177",
         "pending": "2309372032769300000000000000000000",
         "receivable": "2309372032769300000000000000000000"
     },
-    "paw_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7":
+    "adia_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7":
     {
       "balance": "10000000",
       "pending": "0",
@@ -356,15 +356,15 @@ Returns a list of pairs of account and block hash representing the head block fo
 ```json
 {
   "action": "accounts_frontiers",
-  "accounts": ["paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "paw_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"]
+  "accounts": ["adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3", "adia_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"]
 }
 ```  
 **Response:**
 ```json
 {
   "frontiers" : {
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": "791AF413173EEE674A6FCF633B5DFC0F3C33F397F0DA08E987D9E0741D40D81A",
-    "paw_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7": "6A32397F4E95AF025DE29D9BF1ACE864D5404362258E06489FABDBA9DCCC046F"
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": "791AF413173EEE674A6FCF633B5DFC0F3C33F397F0DA08E987D9E0741D40D81A",
+    "adia_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7": "6A32397F4E95AF025DE29D9BF1ACE864D5404362258E06489FABDBA9DCCC046F"
   }
 }
 ```  
@@ -386,7 +386,7 @@ Returns a list of confirmed block hashes which have not yet been received by the
 ```json
 {
   "action": "accounts_receivable",
-  "accounts": ["paw_1111111111111111111111111111111111111111111111111117353trpda", "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
+  "accounts": ["adia_1111111111111111111111111111111111111111111111111117353trpda", "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
   "count": "1"
 }
 ```  
@@ -394,8 +394,8 @@ Returns a list of confirmed block hashes which have not yet been received by the
 ```json
 {
   "blocks" : {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": ["142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D"],
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": ["4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74"]
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": ["142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D"],
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": ["4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74"]
   }
 }
 ```  
@@ -407,7 +407,7 @@ Number (128 bit, decimal). Returns a list of receivable block hashes with amount
 ```json
 {
   "action": "accounts_receivable",
-  "accounts": ["paw_1111111111111111111111111111111111111111111111111117353trpda", "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
+  "accounts": ["adia_1111111111111111111111111111111111111111111111111117353trpda", "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
   "count": "1",
   "threshold": "1000000000000000000000000"
 }
@@ -416,10 +416,10 @@ Number (128 bit, decimal). Returns a list of receivable block hashes with amount
 ```json
 {
   "blocks" : {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": {
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": {
       "142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D": "6000000000000000000000000000000"
     },
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
       "4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74": "106370018000000000000000000000000"
     }
   }
@@ -433,7 +433,7 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 ```json
 {
   "action": "accounts_receivable",
-  "accounts": ["paw_1111111111111111111111111111111111111111111111111117353trpda", "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
+  "accounts": ["adia_1111111111111111111111111111111111111111111111111117353trpda", "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
   "count": "1",
   "source": "true"
 }
@@ -442,16 +442,16 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 ```json
 {
   "blocks" : {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": {
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": {
       "142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D": {
         "amount": "6000000000000000000000000000000",
-        "source": "paw_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
+        "source": "adia_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
       }
     },
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
       "4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74": {
         "amount": "106370018000000000000000000000000",
-        "source": "paw_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo"
+        "source": "adia_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo"
       }
     }
   }
@@ -466,7 +466,7 @@ Boolean, false by default. Include active (not confirmed) blocks
 ```json
 {
   "action": "accounts_receivable",
-  "accounts": ["paw_1111111111111111111111111111111111111111111111111117353trpda", "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
+  "accounts": ["adia_1111111111111111111111111111111111111111111111111117353trpda", "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"],
   "count": "1",
   "include_active": "true"
 }
@@ -491,15 +491,15 @@ Returns the representatives for given **accounts**
 ```json
 {
   "action": "accounts_representatives",
-  "accounts": ["paw_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5","paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"]
+  "accounts": ["adia_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5","adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"]
 }
 ```  
 **Response:**
 ```json
 {
   "representatives" : {
-    "paw_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5": "paw_3hd4ezdgsp15iemx7h81in7xz5tpxi43b6b41zn3qmwiuypankocw3awes5k",
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+    "adia_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5": "adia_3hd4ezdgsp15iemx7h81in7xz5tpxi43b6b41zn3qmwiuypankocw3awes5k",
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
   }
 }
 ```
@@ -537,7 +537,7 @@ Returns the account containing block
 **Response:**
 ```json
 {
-  "account": "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
+  "account": "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3"
 }
 ```
 
@@ -608,7 +608,7 @@ Creates a json representations of new block based on input data & signed with **
   "type": "state",
   "balance": "1000000000000000000000",
   "key": "0000000000000000000000000000000000000000000000000000000000000002",
-  "representative": "paw_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
+  "representative": "adia_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
   "link": "19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858",
   "previous": "F47B23107E5F34B2CE06F562B5C435DF72A533251CB414C51B2B62A8F63A00E4"
 }
@@ -617,7 +617,7 @@ Parameters for state block:
 
 * `balance`: **final** balance for account after block creation, formatted in 'raw' units using a decimal integer. If balance is less than previous, block is considered as send subtype!
 * `wallet` (optional): The wallet ID that the account the block is being created for is in.
-* `account` (optional): The account the block is being created for (paw_youraccount).
+* `account` (optional): The account the block is being created for (adia_youraccount).
 * `key` (optional): Instead of using "wallet" & "account" parameters, you can directly pass in a private key.
 * `source` (optional): The block hash of the source of funds for this receive block (the send block that this receive block will pocket).
 * `destination` (optional): The account that the sent funds should be accessible to.
@@ -657,12 +657,12 @@ If difficulty and work values are both not given, RPC processor tries to calcula
   "difficulty": "ffffffe1278b3dc6", // since V21.0
   "block": {
     "type": "state",
-    "account": "paw_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr",
+    "account": "adia_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr",
     "previous": "F47B23107E5F34B2CE06F562B5C435DF72A533251CB414C51B2B62A8F63A00E4",
-    "representative": "paw_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
+    "representative": "adia_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
     "balance": "1000000000000000000000",
     "link": "19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858",
-    "link_as_account": "paw_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
+    "link_as_account": "adia_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
     "signature": "3BFBA64A775550E6D49DF1EB8EEC2136DCD74F090E2ED658FBD9E80F17CB1C9F9F7BDE2B93D95558EC2F277FFF15FD11E6E2162A1714731B743D1E941FA4560A",
     "work": "cab7404f0b5449d0"
   }
@@ -682,12 +682,12 @@ Returning block hash for given **block** content. Using the optional `json_block
   "json_block": "true", 
   "block": {
     "type": "state",
-    "account": "paw_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr",
+    "account": "adia_3qgmh14nwztqw4wmcdzy4xpqeejey68chx6nciczwn9abji7ihhum9qtpmdr",
     "previous": "F47B23107E5F34B2CE06F562B5C435DF72A533251CB414C51B2B62A8F63A00E4",
-    "representative": "paw_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
+    "representative": "adia_1hza3f7wiiqa7ig3jczyxj5yo86yegcmqk3criaz838j91sxcckpfhbhhra1",
     "balance": "1000000000000000000000",
     "link": "19D3D919475DEED4696B5D13018151D1AF88B2BD3BCFF048B45031C1F36D1858",
-    "link_as_account": "paw_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
+    "link_as_account": "adia_18gmu6engqhgtjnppqam181o5nfhj4sdtgyhy36dan3jr9spt84rzwmktafc",
     "signature": "3BFBA64A775550E6D49DF1EB8EEC2136DCD74F090E2ED658FBD9E80F17CB1C9F9F7BDE2B93D95558EC2F277FFF15FD11E6E2162A1714731B743D1E941FA4560A",
     "work": "cab7404f0b5449d0"
   }
@@ -727,7 +727,7 @@ Using the optional `json_block` is recommended since v19.0.
 **Response:**
 ```json
 {
-  "block_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+  "block_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
   "amount": "30000000000000000000000000000000000",
   "balance": "5606157000000000000000000000000000000",
   "height": "58",
@@ -736,12 +736,12 @@ Using the optional `json_block` is recommended since v19.0.
   "confirmed": "true",
   "contents": {
     "type": "state",
-    "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+    "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
     "previous": "CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E",
-    "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+    "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
     "balance": "5606157000000000000000000000000000000",
     "link": "5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5",
-    "link_as_account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+    "link_as_account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
     "signature": "82D41BC16F313E4B2243D14DFFA2FB04679C540C2095FEE7EAE0F2F26880AD56DD48D87A7CC5DD760C5B2D76EE2C205506AA557BF00B60D8DEE312EC7343A501",
     "work": "8a142e07a10996d5"
   },
@@ -775,12 +775,12 @@ Retrieves a json representations of **blocks**. Using the optional `json_block` 
   "blocks": {
     "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9": {
       "type": "state",
-      "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "previous": "CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E",
-      "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+      "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
       "balance": "5606157000000000000000000000000000000",
       "link": "5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5",
-      "link_as_account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+      "link_as_account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
       "signature": "82D41BC16F313E4B2243D14DFFA2FB04679C540C2095FEE7EAE0F2F26880AD56DD48D87A7CC5DD760C5B2D76EE2C205506AA557BF00B60D8DEE312EC7343A501",
       "work": "8a142e07a10996d5"
     }
@@ -817,7 +817,7 @@ Using the optional `json_block` is recommended since v19.0.
 {
   "blocks": {
     "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9": {
-      "block_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "block_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "amount": "30000000000000000000000000000000000",
       "balance": "5606157000000000000000000000000000000",
       "height": "58",
@@ -826,12 +826,12 @@ Using the optional `json_block` is recommended since v19.0.
       "confirmed": "true",
       "contents": {
         "type": "state",
-        "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+        "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
         "previous": "CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E",
-        "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+        "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
         "balance": "5606157000000000000000000000000000000",
         "link": "5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5",
-        "link_as_account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+        "link_as_account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
         "signature": "82D41BC16F313E4B2243D14DFFA2FB04679C540C2095FEE7EAE0F2F26880AD56DD48D87A7CC5DD760C5B2D76EE2C205506AA557BF00B60D8DEE312EC7343A501",
         "work": "8a142e07a10996d5"
       },
@@ -864,14 +864,14 @@ Booleans, false by default. Additionally checks if block is receivable, returns 
 {
   "blocks" : {
     "E2FB233EF4554077A7BF1AA85851D5BF0B36965D2B0FB504B2BC778AB89917D3": {
-      "block_account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+      "block_account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
       "amount": "30000000000000000000000000000000000",
       "contents": {
         ...
       },
       "pending": "0",
       "receivable": "0",
-      "source_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "source_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "balance": "40200000001000000000000000000000000"
     }
   }
@@ -900,7 +900,7 @@ Default "false". If "true", an additional "blocks_not_found" is provided in the 
 {
   "blocks" : {
     "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9": {
-      "block_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "block_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "amount": "30000000000000000000000000000000000",
       "balance": "5606157000000000000000000000000000000",
       "height": "58",
@@ -1044,7 +1044,7 @@ Returning status of current bootstrap attempt
       "frontiers_confirmed": "false",
       "frontiers_confirmation_pending": "false",
       "frontiers_age": "4294967295",
-      "last_account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+      "last_account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
       "duration": "133"
     },
     {
@@ -1278,12 +1278,12 @@ The roots provided are two parts and differ between the first account block and 
       "tally": "51145880360832646375807054724596663794",
       "contents": {
         "type": "state",
-        "account": "paw_3fihmbtuod33s4nrbqfczhk9zy9ddqimwjshzg4c3857es8c9631i5rg6h9p",
+        "account": "adia_3fihmbtuod33s4nrbqfczhk9zy9ddqimwjshzg4c3857es8c9631i5rg6h9p",
         "previous": "EE125B1B1D85D3C24636B3590E1642D9F21B166C0C6CD99C9C6087A1224A0C44",
-        "representative": "paw_3o7uzba8b9e1wqu5ziwpruteyrs3scyqr761x7ke6w1xctohxfh5du75qgaj",
+        "representative": "adia_3o7uzba8b9e1wqu5ziwpruteyrs3scyqr761x7ke6w1xctohxfh5du75qgaj",
         "balance": "218195000000000000000000000000",
         "link": "0000000000000000000000000000000000000000000000000000000000000000",
-        "link_as_account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+        "link_as_account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
         "signature": "B1BD285235C612C5A141FA61793D7C6C762D3F104A85102DED5FBD6B4514971C4D044ACD3EC8C06A9495D8E83B6941B54F8DABA825ADF799412ED9E2C86D7A0C",
         "work": "05bb28cd8acbe71d"
       }
@@ -1325,20 +1325,20 @@ Boolean, false by default. Returns list of votes representatives & its weights f
       "tally": "51145880360792646375807054724596663794",
       "contents": {
         "type": "state",
-        "account": "paw_3fihmbtuod33s4nrbqfczhk9zy9ddqimwjshzg4c3857es8c9631i5rg6h9p",
+        "account": "adia_3fihmbtuod33s4nrbqfczhk9zy9ddqimwjshzg4c3857es8c9631i5rg6h9p",
         "previous": "EE125B1B1D85D3C24636B3590E1642D9F21B166C0C6CD99C9C6087A1224A0C44",
-        "representative": "paw_3o7uzba8b9e1wqu5ziwpruteyrs3scyqr761x7ke6w1xctohxfh5du75qgaj",
+        "representative": "adia_3o7uzba8b9e1wqu5ziwpruteyrs3scyqr761x7ke6w1xctohxfh5du75qgaj",
         "balance": "218195000000000000000000000000",
         "link": "0000000000000000000000000000000000000000000000000000000000000000",
-        "link_as_account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+        "link_as_account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
         "signature": "B1BD285235C612C5A141FA61793D7C6C762D3F104A85102DED5FBD6B4514971C4D044ACD3EC8C06A9495D8E83B6941B54F8DABA825ADF799412ED9E2C86D7A0C",
         "work": "05bb28cd8acbe71d"
       },
       "representatives": {
-        "paw_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh": "12617828599372664613607727105312358589",
-        "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou": "5953738757270291536911559258663615240",
+        "adia_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh": "12617828599372664613607727105312358589",
+        "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou": "5953738757270291536911559258663615240",
         ...
-        "paw_3i4n5n6c6xssapbdtkdoutm88c5zjmatc5tc77xyzdkpef8akid9errcpjnx": "0"
+        "adia_3i4n5n6c6xssapbdtkdoutm88c5zjmatc5tc77xyzdkpef8akid9errcpjnx": "0"
       }
     }
   }
@@ -1451,15 +1451,15 @@ Returns a list of pairs of delegator accounts and balances given a representativ
 ```json
 {
   "action": "delegators",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda"
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda"
 }
 ```  
 **Response:**
 ```json
 {
   "delegators": {
-    "paw_13bqhi1cdqq8yb9szneoc38qk899d58i5rcrgdk5mkdm86hekpoez3zxw5sd": "500000000000000000000000000000000000",
-    "paw_17k6ug685154an8gri9whhe5kb5z1mf5w6y39gokc1657sh95fegm8ht1zpn": "961647970820730000000000000000000000"
+    "adia_13bqhi1cdqq8yb9szneoc38qk899d58i5rcrgdk5mkdm86hekpoez3zxw5sd": "500000000000000000000000000000000000",
+    "adia_17k6ug685154an8gri9whhe5kb5z1mf5w6y39gokc1657sh95fegm8ht1zpn": "961647970820730000000000000000000000"
   }
 }
 ```   
@@ -1481,7 +1481,7 @@ Get number of delegators for a specific representative **account**
 ```json
 {
   "action": "delegators_count",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda"
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda"
 }
 ```  
 **Response:**
@@ -1509,7 +1509,7 @@ Derive deterministic keypair from **seed** based on **index**
 {
   "private": "9F0E444C69F77A49BD0BE89DB92C38FE713E0963165CCA12FAF5712D7657120F",
   "public": "C008B814A7D269A1FA3C6528B19201A24D797912DB9996FF02A1FF356E45552B",
-  "account": "paw_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"
+  "account": "adia_3i1aq1cchnmbn9x5rsbap8b15akfh7wj7pwskuzi7ahz8oq6cobd99d4r3b7"
 }
 ```  
 
@@ -1572,7 +1572,7 @@ Returns a list of pairs of account and block hash representing the head block st
 ```json
 {
   "action": "frontiers",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
   "count": "1"
 }
 ```  
@@ -1580,7 +1580,7 @@ Returns a list of pairs of account and block hash representing the head block st
 ```json
 {
   "frontiers" : {
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
   }
 }
 ```
@@ -1624,7 +1624,7 @@ Generates an **adhoc random keypair**
 {
   "private": "781186FB9EF17DB6E3D1056550D9FAE5D5BBADA6A6BC370E4CBB938B1DC71DA3",
   "public": "3068BB1CA04525BB0E416C485FE6A67FD52540227D267CC8B6E8DA958A7FA039",
-  "account": "paw_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
+  "account": "adia_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
 }
 ```  
 
@@ -1645,7 +1645,7 @@ Derive public key and account number from **private key**
 {
   "private": "781186FB9EF17DB6E3D1056550D9FAE5D5BBADA6A6BC370E4CBB938B1DC71DA3",
   "public": "3068BB1CA04525BB0E416C485FE6A67FD52540227D267CC8B6E8DA958A7FA039",
-  "account": "paw_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
+  "account": "adia_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3sxwjym5rx"
 }
 ```  
 
@@ -1663,7 +1663,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 ```json
 {
   "action": "ledger",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
   "count": "1"
 }
 ```  
@@ -1671,7 +1671,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 ```json
 {
   "accounts": {
-    "paw_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
+    "adia_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
       "frontier": "E71AF3E9DD86BBD8B4620EFA63E065B34D358CFC091ACB4E103B965F95783321",
       "open_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "representative_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
@@ -1689,7 +1689,7 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 ```json
 {
   "action": "ledger",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
   "count": "1",
   "representative": "true",
   "weight": "true",
@@ -1700,14 +1700,14 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 ```json
 {
   "accounts": {
-    "paw_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
+    "adia_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
       "frontier": "E71AF3E9DD86BBD8B4620EFA63E065B34D358CFC091ACB4E103B965F95783321",
       "open_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "representative_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "balance": "0",
       "modified_timestamp": "1511476234",
       "block_count": "2",
-      "representative": "paw_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
+      "representative": "adia_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
       "weight": "0",
       "pending": "0",
       "receivable": "0"
@@ -1735,7 +1735,7 @@ _enable_control required, version 17.0+_
 --8<-- warning-debug-only-command.md
  
 Returns private key, public key and node ID number with checksum (similar to account representation) from the existing node ID created on startup. "as_account" field is **deprecated**  
-_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `paw_` prefix_  
+_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `adia_` prefix_  
 
 --8<-- warning-enable-control.md
 
@@ -1750,7 +1750,7 @@ _version 20.0 will generate the node_id with `node_` prefix, earlier versions wi
 {
   "private": "2AD75C9DC20EA497E41722290C4DC966ECC4D6C75CAA4E447961F918FD73D8C7",
   "public": "78B11E1777B8E7DF9090004376C3EDE008E84680A497C0805F68CA5928626E1C",
-  "as_account": "paw_1y7j5rdqhg99uyab1145gu3yur1ax35a3b6qr417yt8cd6n86uiw3d4whty3",
+  "as_account": "adia_1y7j5rdqhg99uyab1145gu3yur1ax35a3b6qr417yt8cd6n86uiw3d4whty3",
   "node_id": "node_1y7j5rdqhg99uyab1145gu3yur1ax35a3b6qr417yt8cd6n86uiw3d4whty3"
 }
 ```  
@@ -1813,7 +1813,7 @@ Returns a list of pairs of online peer IPv6:port and its node protocol network v
 _version 18.0+_   
 Boolean, false by default. Returns a list of peers IPv6:port with its node protocol network version and node ID. The node ID is random and is not a Nano address. As of Version V21+ `type` returns `tcp`, as `udp` was **deprecated** and is not longer used for peering with that node.
 
-_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `paw_` prefix_  
+_version 20.0 will generate the node_id with `node_` prefix, earlier versions will generate with `adia_` prefix_  
 
 **Request:**
 ```json
@@ -1864,12 +1864,12 @@ Publish **block** to the network. Using the optional `json_block` is recommended
   "subtype": "send",
   "block": {
     "type": "state",
-    "account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+    "account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
     "previous": "6CDDA48608C7843A0AC1122BDD46D9E20E21190986B19EAC23E7F33F2E6A6766",
-    "representative": "paw_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
+    "representative": "adia_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
     "balance": "40200000001000000000000000000000000",
     "link": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",
-    "link_as_account": "paw_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
+    "link_as_account": "adia_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
     "signature": "A5DB164F6B81648F914E49CAB533900C389FAAD64FBB24F6902F9261312B29F730D07E9BCCD21D918301419B4E05B181637CF8419ED4DCBF8EF2539EB2467F07",
     "work": "000bc55b014e807d"
   }
@@ -1920,7 +1920,7 @@ Returns a list of block hashes which have not yet been received by this account.
 ```json
 {
   "action": "receivable",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda",
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda",
   "count": "1"
 }
 ```  
@@ -1941,7 +1941,7 @@ Number (128 bit, decimal). Returns a list of receivable block hashes with amount
 ```json
 {
   "action": "receivable",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda",
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda",
   "count": "1",
   "threshold": "1000000000000000000000000"
 }
@@ -1962,7 +1962,7 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 ```json
 {
   "action": "receivable",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda",
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda",
   "count": "1",
   "source": "true"
 }
@@ -1973,7 +1973,7 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
   "blocks" : {
     "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F": {
       "amount": "6000000000000000000000000000000",
-      "source": "paw_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
+      "source": "adia_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
     }
   }
 }
@@ -1987,7 +1987,7 @@ Boolean, false by default. Include active blocks without finished confirmations
 ```json
 {
   "action": "receivable",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda",
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda",
   "count": "1",
   "include_active": "true"
 }
@@ -2068,9 +2068,9 @@ Returns a list of pairs of representative and its voting weight
 ```json
 {
   "representatives": {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": "3822372327060170000000000000000000000",
-    "paw_1111111111111111111111111111111111111111111111111awsq94gtecn": "30999999999999999999999999000000",
-    "paw_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": "0"
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": "3822372327060170000000000000000000000",
+    "adia_1111111111111111111111111111111111111111111111111awsq94gtecn": "30999999999999999999999999000000",
+    "adia_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": "0"
   }
 }
 ```
@@ -2101,9 +2101,9 @@ Returns a list of online representative accounts that have voted recently
 ```json
 {
   "representatives": [
-    "paw_1111111111111111111111111111111111111111111111111117353trpda",
-    "paw_1111111111111111111111111111111111111111111111111awsq94gtecn",
-    "paw_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi"
+    "adia_1111111111111111111111111111111111111111111111111117353trpda",
+    "adia_1111111111111111111111111111111111111111111111111awsq94gtecn",
+    "adia_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi"
   ]
 }
 ```
@@ -2113,9 +2113,9 @@ Returns a list of pairs of online representative accounts that have voted recent
 ```json
 {
   "representatives" : {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": "",
-    "paw_1111111111111111111111111111111111111111111111111awsq94gtecn": "",
-    "paw_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": ""
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": "",
+    "adia_1111111111111111111111111111111111111111111111111awsq94gtecn": "",
+    "adia_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": ""
   }
 }
 ```
@@ -2127,7 +2127,7 @@ Boolean, false by default. Returns voting weight for each representative.
 ```json
 {
   "representatives": {
-    "paw_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": {
+    "adia_114nk4rwjctu6n6tr6g6ps61g1w3hdpjxfas4xj1tq6i8jyomc5d858xr1xi": {
       "weight": "150462654614686936429917024683496890"
     }
   }
@@ -2141,14 +2141,14 @@ Array of accounts. Returned list is filtered for only these accounts.
 ```json
 {
   "action": "representatives_online",
-  "accounts": ["paw_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p", "paw_1111111111111111111111111111111111111111111111111117353trpda"]
+  "accounts": ["adia_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p", "adia_1111111111111111111111111111111111111111111111111117353trpda"]
 }
 ```  
 **Response:**
 ```json
 {
   "representatives": [
-    "paw_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p"
+    "adia_1q3hqecaw15cjt7thbtxu3pbzr1eihtzzpzxguoc37bj1wc5ffoh7w74gi6p"
   ]
 }
 ```
@@ -2240,12 +2240,12 @@ Signing provided **block** with private **key** or key of **account** from **wal
   "key": "1D3759BB2CA187A66875D3B8497624159A576FD315E07F702B99B92BC59FC14A",
   "block": {
     "type": "state",
-    "account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+    "account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
     "previous": "6CDDA48608C7843A0AC1122BDD46D9E20E21190986B19EAC23E7F33F2E6A6766",
-    "representative": "paw_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
+    "representative": "adia_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
     "balance": "40200000001000000000000000000000000",
     "link": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",
-    "link_as_account": "paw_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
+    "link_as_account": "adia_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
     "signature": "A5DB164F6B81648F914E49CAB533900C389FAAD64FBB24F6902F9261312B29F730D07E9BCCD21D918301419B4E05B181637CF8419ED4DCBF8EF2539EB2467F07",
     "work": "000bc55b014e807d"
   }
@@ -2258,15 +2258,15 @@ Signing provided **block** with private **key** or key of **account** from **wal
   "action": "sign",
   "json_block": "true",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_18ky5chy5ws89oi46ki4zjy6x5ezpmj98zg6icwke9bmuy99nosieyqf8c1h",
+  "account": "adia_18ky5chy5ws89oi46ki4zjy6x5ezpmj98zg6icwke9bmuy99nosieyqf8c1h",
   "block": {
     "type": "state",
-    "account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+    "account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
     "previous": "6CDDA48608C7843A0AC1122BDD46D9E20E21190986B19EAC23E7F33F2E6A6766",
-    "representative": "paw_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
+    "representative": "adia_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
     "balance": "40200000001000000000000000000000000",
     "link": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",
-    "link_as_account": "paw_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
+    "link_as_account": "adia_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
     "signature": "A5DB164F6B81648F914E49CAB533900C389FAAD64FBB24F6902F9261312B29F730D07E9BCCD21D918301419B4E05B181637CF8419ED4DCBF8EF2539EB2467F07",
     "work": "000bc55b014e807d"
   }
@@ -2278,12 +2278,12 @@ Signing provided **block** with private **key** or key of **account** from **wal
   "signature": "2A71F3877033F5966735F260E906BFCB7FA82CDD543BCD1224F180F85A96FC26CB3F0E4180E662332A0DFE4EE6A0F798A71C401011E635604E532383EC08C70D",
   "block": {
     "type": "state",
-    "account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+    "account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
     "previous": "6CDDA48608C7843A0AC1122BDD46D9E20E21190986B19EAC23E7F33F2E6A6766",
-    "representative": "paw_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
+    "representative": "adia_3pczxuorp48td8645bs3m6c3xotxd3idskrenmi65rbrga5zmkemzhwkaznh",
     "balance": "40200000001000000000000000000000000",
     "link": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",
-    "link_as_account": "paw_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
+    "link_as_account": "adia_33t5by1653nt196hfwm5q3wq7oxtaix97r7bhox5zn8eratrzoqsny49ftsd",
     "signature": "2A71F3877033F5966735F260E906BFCB7FA82CDD543BCD1224F180F85A96FC26CB3F0E4180E662332A0DFE4EE6A0F798A71C401011E635604E532383EC08C70D",
     "work": "000bc55b014e807d"
   }
@@ -2645,7 +2645,7 @@ Check whether **account** is a valid account number using checksum
 ```json
 {
   "action": "validate_account_number",
-  "account": "paw_1111111111111111111111111111111111111111111111111117353trpda"
+  "account": "adia_1111111111111111111111111111111111111111111111111117353trpda"
 }
 ```  
 **Response:**
@@ -2702,12 +2702,12 @@ Returns a list of pairs of unchecked block hashes and their json representation 
   "blocks": {
     "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9": {
       "type": "state",
-      "account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "previous": "CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E",
-      "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+      "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
       "balance": "5606157000000000000000000000000000000",
       "link": "5D1AA8A45F8736519D707FCB375976A7F9AF795091021D7E9C7548D6F45DD8D5",
-      "link_as_account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+      "link_as_account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
       "signature": "82D41BC16F313E4B2243D14DFFA2FB04679C540C2095FEE7EAE0F2F26880AD56DD48D87A7CC5DD760C5B2D76EE2C205506AA557BF00B60D8DEE312EC7343A501",
       "work": "8a142e07a10996d5"
     }
@@ -2756,12 +2756,12 @@ Retrieves a json representation of unchecked synchronizing block by **hash**. Us
   "modified_timestamp": "1565856525",
   "contents": {
     "type": "state",
-    "account": "paw_1hmqzugsmsn4jxtzo5yrm4rsysftkh9343363hctgrjch1984d8ey9zoyqex",
+    "account": "adia_1hmqzugsmsn4jxtzo5yrm4rsysftkh9343363hctgrjch1984d8ey9zoyqex",
     "previous": "009C587914611E83EE7F75BD9C000C430C720D0364D032E84F37678D7D012911",
-    "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+    "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
     "balance": "189012679592109992600249228",
     "link": "0000000000000000000000000000000000000000000000000000000000000000",
-    "link_as_account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+    "link_as_account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
     "signature": "845C8660750895843C013CE33E31B80EF0A7A69E52DDAF74A5F1BDFAA9A52E4D9EA2C3BE1AB0BD5790FCC1AD9B7A3D2F4B44EECE4279A8184D414A30A1B4620F",
     "work": "0dfb32653e189699"
   }
@@ -2799,12 +2799,12 @@ Retrieves unchecked database keys, blocks hashes & a json representations of unc
       "modified_timestamp": "1565856744",
       "contents": {
         "type": "state",
-        "account": "paw_1hmqzugsmsn4jxtzo5yrm4rsysftkh9343363hctgrjch1984d8ey9zoyqex",
+        "account": "adia_1hmqzugsmsn4jxtzo5yrm4rsysftkh9343363hctgrjch1984d8ey9zoyqex",
         "previous": "19BF0C268C2D9AED1A8C02E40961B67EA56B1681DE274CD0C50F3DD972F0655C",
-        "representative": "paw_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
+        "representative": "adia_1stofnrxuz3cai7ze75o174bpm7scwj9jn3nxsn8ntzg784jf1gzn1jjdkou",
         "balance": "189012679592109992600249226",
         "link": "0000000000000000000000000000000000000000000000000000000000000000",
-        "link_as_account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+        "link_as_account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
         "signature": "FF5D49925AD3C8705E6EEDD993E8C4120E6107D7F1CB53B287773448DEA0B1D32918E67804248FC83609F0D93401D833DFA33127F21B6CD02F75D6E31A00450A",
         "work": "8193ddf00947e694"
       }
@@ -2832,7 +2832,7 @@ Returns the total receivable balance for unopened accounts in the local database
 ```json
 {
   "action": "unopened",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
   "count": "1"
 }
 ```   
@@ -2841,7 +2841,7 @@ Returns the total receivable balance for unopened accounts in the local database
 ```json 
 {
   "accounts": {
-    "paw_1111111111111111111111111111111111111111111111111111hifc8npp": "207034077034226183413773082289554618448"
+    "adia_1111111111111111111111111111111111111111111111111111hifc8npp": "207034077034226183413773082289554618448"
   }
 }
 ```   
@@ -3133,7 +3133,7 @@ Creates a new account, insert next deterministic key in **wallet**
 **Response:**
 ```json
 {
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```
 **Optional "index"**
@@ -3180,7 +3180,7 @@ Lists all the accounts inside **wallet**
 ```json
 {
   "accounts": [
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
   ]
 }
 ```
@@ -3200,7 +3200,7 @@ Moves **accounts** from **source** to **wallet**
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
   "source": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
   "accounts": [
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
   ]
 }
 ```  
@@ -3224,7 +3224,7 @@ Remove **account** from **wallet**
 {
   "action": "account_remove",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi"
+  "account": "adia_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi"
 }
 ```  
 **Response:**
@@ -3247,8 +3247,8 @@ Sets the representative for **account** in **wallet**
 {
   "action": "account_representative_set",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi",
-  "representative": "paw_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5"
+  "account": "adia_39a73oy5ungrhxy5z5oao1xso4zo7dmgpjd4u74xcrx3r1w6rtazuouw6qfi",
+  "representative": "adia_16u1uufyoig8777y6r8iqjtrw8sg8maqrm36zzcm95jmbd9i9aj5i8abr8u5"
 }
 ```  
 **Response:**
@@ -3282,8 +3282,8 @@ Creates new accounts, insert next deterministic keys in **wallet** up to **count
 ```json
 {
   "accounts": [
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-    "paw_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3s00000000"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+    "adia_1e5aqegc1jb7qe964u4adzmcezyo6o146zb8hm6dft8tkp79za3s00000000"
   ]
 }
 ```
@@ -3382,7 +3382,7 @@ Receive receivable **block** for **account** in **wallet**. If receiving the blo
 {
   "action": "receive",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "block": "53EAA25CE28FA0E6D55EA9704B32604A736966255948594D55CBB05267CECD48"
 }
 ```  
@@ -3516,8 +3516,8 @@ Integrations using the node wallet must ensure idempotency for transactions and 
 {
   "action": "send",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "source": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-  "destination": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "source": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "destination": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "amount": "1000000",
   "id": "your-unique-id"
 }
@@ -3548,8 +3548,8 @@ Using the same id for requests with different parameters (wallet, source, destin
 {
   "action": "send",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "source": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-  "destination": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "source": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "destination": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "amount": "1000000",
   "id": "7081e2b8fec9146e"
 }
@@ -3573,8 +3573,8 @@ Work value (16 hexadecimal digits string, 64 bit). Uses **work** value for block
 {
   "action": "send",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "source": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-  "destination": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "source": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "destination": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "amount": "1000000",
   "work": "2bf29ef00786a6bc"
 }
@@ -3604,7 +3604,7 @@ Add an adhoc private key **key** to **wallet**
 **Response:**
 ```json
 {
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```
 **Optional disabling work generation**
@@ -3636,8 +3636,8 @@ Add watch-only **accounts** to **wallet**
   "action": "wallet_add_watch",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
   "accounts": [
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
-    "paw_111111111111111111111111111111111111111111111111111000000000"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+    "adia_111111111111111111111111111111111111111111111111111000000000"
   ]
 }
 ```  
@@ -3668,7 +3668,7 @@ Returns how many raw is owned and how many have not yet been received by all acc
 ```json
 {
   "balances" : {
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": {
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": {
       "balance": "10000",
       "pending": "10000",
       "receivable": "10000"
@@ -3702,7 +3702,7 @@ Changes seed for **wallet** to **seed**.  ***Notes:*** Clear all deterministic a
 ```json
 {
   "success" : "",
-  "last_restored_account": "paw_1mhdfre3zczr86mp44jd3xft1g1jg66jwkjtjqixmh6eajfexxti7nxcot9c",
+  "last_restored_account": "adia_1mhdfre3zczr86mp44jd3xft1g1jg66jwkjtjqixmh6eajfexxti7nxcot9c",
   "restored_count": "1"
 }
 ```
@@ -3722,7 +3722,7 @@ Check whether **wallet** contains **account**
 {
   "action": "wallet_contains",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```  
 **Response:**
@@ -3814,7 +3814,7 @@ Returns a list of pairs of account and block hash representing the head block st
 ```json
 {
   "frontiers": {
-    "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
+    "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F"
   }
 }
 ```
@@ -3841,17 +3841,17 @@ Reports send/receive information for accounts in wallet. Change blocks are skipp
   [
     {
       "type": "send",
-      "account": "paw_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
+      "account": "adia_1qato4k7z3spc8gq1zyd8xeqfbzsoxwo36a45ozbrxcatut7up8ohyardu1z",
       "amount": "30000000000000000000000000000000000",
-      "block_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "block_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9",
       "local_timestamp": "1527698508"
     },
     {
       "type": "send",
-      "account": "paw_38ztgpejb7yrm7rr586nenkn597s3a1sqiy3m3uyqjicht7kzuhnihdk6zpz",
+      "account": "adia_38ztgpejb7yrm7rr586nenkn597s3a1sqiy3m3uyqjicht7kzuhnihdk6zpz",
       "amount": "40000000000000000000000000000000000",
-      "block_account": "paw_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
+      "block_account": "adia_1ipx847tk8o46pwxt5qjdbncjqcbwcc1rrmqnkztrfjy5k7z4imsrata9est",
       "hash": "CE898C131AAEE25E05362F247760F8A3ACF34A9796A5AE0D9204E86B0637965E",
       "local_timestamp": "1527698492"
     }
@@ -3925,7 +3925,7 @@ Returns frontier, open block, change representative block, balance, last modifie
 ```json
 {
   "accounts": {
-    "paw_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
+    "adia_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
       "frontier": "E71AF3E9DD86BBD8B4620EFA63E065B34D358CFC091ACB4E103B965F95783321",
       "open_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "representative_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
@@ -3954,14 +3954,14 @@ Booleans, false by default. Additionally returns representative, voting weight, 
 ```json
 {
   "accounts": {
-    "paw_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
+    "adia_11119gbh8hb4hj1duf7fdtfyf5s75okzxdgupgpgm1bj78ex3kgy7frt3s9n": {
       "frontier": "E71AF3E9DD86BBD8B4620EFA63E065B34D358CFC091ACB4E103B965F95783321",
       "open_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "representative_block": "643B77F1ECEFBDBE1CC909872964C1DBBE23A6149BD3CEF2B50B76044659B60F",
       "balance": "0",
       "modified_timestamp": "1511476234",
       "block_count": "2",
-      "representative": "paw_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
+      "representative": "adia_1anrzcuwe64rwxzcco8dkhpyxpi8kd7zsjc1oeimpc3ppca4mrjtwnqposrs",
       "weight": "0",
       "pending": "0",
       "receivable": "0"
@@ -4042,8 +4042,8 @@ Returns a list of block hashes which have not yet been received by accounts in t
 ```json
 {
   "blocks": {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": ["142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D"],
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": ["4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74"]
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": ["142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D"],
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": ["4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74"]
   }
 }
 ```  
@@ -4064,10 +4064,10 @@ Number (128 bit, decimal). Returns a list of receivable block hashes with amount
 ```json
 {
   "blocks": {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": {
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": {
       "142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D": "6000000000000000000000000000000"
     },
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
       "4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74": "106370018000000000000000000000000"
     }
   }
@@ -4091,16 +4091,16 @@ Boolean, false by default. Returns a list of receivable block hashes with amount
 ```json
 {
   "blocks": {
-    "paw_1111111111111111111111111111111111111111111111111117353trpda": {
+    "adia_1111111111111111111111111111111111111111111111111117353trpda": {
       "142A538F36833D1CC78B94E11C766F75818F8B940771335C6C1B8AB880C5BB1D": {
         "amount": "6000000000000000000000000000000",
-        "source": "paw_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
+        "source": "adia_3dcfozsmekr1tr9skf1oa5wbgmxt81qepfdnt7zicq5x3hk65fg4fqj58mbr"
       }
     },
-    "paw_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
+    "adia_3t6k35gi95xu6tergt6p69ck76ogmitsa8mnijtpxm9fkcm736xtoncuohr3": {
       "4C1FEEF0BEA7F50BE35489A1233FE002B212DEA554B55B1B470D78BD8F210C74": {
         "amount": "106370018000000000000000000000000",
-        "source": "paw_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo"
+        "source": "adia_13ezf4od79h1tgj9aiu4djzcmmguendtjfuhwfukhuucboua8cpoihmh8byo"
       }
     }
   }
@@ -4146,7 +4146,7 @@ Returns the default representative for **wallet**
 **Response:**
 ```json
 {
-  "representative": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "representative": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```
 
@@ -4163,7 +4163,7 @@ Sets the default **representative** for **wallet** _(used only for new accounts,
 {
   "action": "wallet_representative_set",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "representative": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "representative": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```  
 **Response:**
@@ -4224,7 +4224,7 @@ Returns a list of pairs of account and work from **wallet**
 ```json
 {
   "works": {
-    "paw_1111111111111111111111111111111111111111111111111111hifc8npp": "432e5cf728c90f4f"
+    "adia_1111111111111111111111111111111111111111111111111111hifc8npp": "432e5cf728c90f4f"
   }
 }
 ```  
@@ -4242,7 +4242,7 @@ Retrieves work for **account** in **wallet**
 {
   "action": "work_get",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp"
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp"
 }
 ```  
 **Response:**
@@ -4265,7 +4265,7 @@ Set **work** for **account** in **wallet**
 {
   "action": "work_set",
   "wallet": "000D1BAEC8EC208142C99059B393051BAC8380F9B5A2E6B2489A277D81789F3F",
-  "account": "paw_1111111111111111111111111111111111111111111111111111hifc8npp",
+  "account": "adia_1111111111111111111111111111111111111111111111111111hifc8npp",
   "work": "0000000000000000"
 }
 ```  
@@ -4282,13 +4282,13 @@ Set **work** for **account** in **wallet**
 
 ---
 
-### paw_to_raw
-Convert `paw` amount (10^27 raw) into `raw` (10^0) 
+### adia_to_raw
+Convert `adia` amount (10^34 raw) into `raw` (10^0) 
 
 **Request:**
 ```json
 {
-  "action": "paw_to_raw",
+  "action": "adia_to_raw",
   "amount": "1"
 }
 ```  
@@ -4299,13 +4299,13 @@ Convert `paw` amount (10^27 raw) into `raw` (10^0)
 }
 ```
 
-### raw_to_paw
-Convert `raw` amount (10^0) into `paw` (10^27 raw)
+### raw_to_adia
+Convert `raw` amount (10^0) into `adia` (10^34 raw)
 
 **Request:**
 ```json
 {
-  "action": "raw_to_paw",
+  "action": "raw_to_adia",
   "amount": "1000000000000000000000000000000"
 }
 ```  
@@ -4553,7 +4553,7 @@ Begin a new payment session. Searches wallet for an account that's marked as ava
 **Response:**
 ```json
 {
-  "account" : "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
+  "account" : "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000"
 }
 ```  
 
@@ -4566,7 +4566,7 @@ End a payment session.  Marks the account as available for use in a payment sess
 ```json
 {
   "action": "payment_end",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "wallet": "FFFD1BAEC8EC20814BBB9059B393051AAA8380F9B5A2E6B2489A277D81789EEE"
 }
 ```  
@@ -4604,7 +4604,7 @@ Wait for payment of 'amount' to arrive in 'account' or until 'timeout' milliseco
 ```json
 {
   "action": "payment_wait",
-  "account": "paw_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
+  "account": "adia_3e3j5tkog48pnny9dmfzj1r16pg8t1e76dz5tmac6iq689wyjfpi00000000",
   "amount": "1",
   "timeout": "1000"
 }

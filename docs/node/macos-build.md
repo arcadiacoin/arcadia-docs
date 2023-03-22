@@ -1,6 +1,6 @@
 ---
 title: MacOS source build
-description: How to build PAW node on a MacOS from source
+description: How to build Arcadia node on a MacOS from source
 sidebarDepth: 2
 ---
 
@@ -46,32 +46,32 @@ rm -f b2 project-config*
 ```
 
 
-Recursively clone paw-node's source code into the paw_build directory
+Recursively clone arcadia-node's source code into the adia_build directory
 ```
- git clone --recursive git@github.com:paw-digital/paw-node.git paw_build
+ git clone --recursive git@github.com:arcadiacoin/arcadia-node.git adia_build
 ```
 
 
-Navigate to paw_build directory, export BOOST_ROOT from earlier steps, then compile paw_node.
+Navigate to adia_build directory, export BOOST_ROOT from earlier steps, then compile arcadia_node.
 ```
-cd ~/code/paw_build
+cd ~/code/adia_build
 export BOOST_ROOT=~/code/boost_1_70_0
 cmake -G "Unix Makefiles" .
 make nano_node
-cp nano_node ../paw_node && cd .. && ./paw_node --diagnostics
+cp nano_node ../arcadia_node && cd .. && ./arcadia_node --diagnostics
 ```
 
-congrats! you should now have a working paw_node executable.
+congrats! you should now have a working arcadia_node executable.
 
 You can then use this executable to start up a new node using this slightly modified install script:
-Copy paw_node to /usr/local/bin so that it is on your Path and can be called easily from your terminal window.
+Copy arcadia_node to /usr/local/bin so that it is on your Path and can be called easily from your terminal window.
 ```
-sudo cp ./paw_node > /usr/local/bin/paw_node
-sudo chmod +x /usr/local/bin/paw_node
+sudo cp ./arcadia_node > /usr/local/bin/arcadia_node
+sudo chmod +x /usr/local/bin/arcadia_node
 ```
 
 
-Then run the abbreviated install script (save the contents as paw-install.sh, copy/pasting directly into a zsh terminal won't work):
+Then run the abbreviated install script (save the contents as arcadia-install.sh, copy/pasting directly into a zsh terminal won't work):
 ```
 #!/bin/sh
 
@@ -80,7 +80,7 @@ command -v curl >/dev/null 2>&1 || { echo "Requires curl but it's not installed.
 command -v jq >/dev/null 2>&1 || { echo "Requires jq but it's not installed. Use brew install jq" >&2; exit 1; }
 
 #Create data dir
-datadir=~/"Library/Paw"
+datadir=~/"Library/Arcadia"
 if [ ! -d $datadir ]
 then
     echo "Creating data directory ${datadir}"
@@ -93,7 +93,7 @@ ip=$(curl -s https://ipinfo.io/ip)
 if [ ! -f $config_node_file ]
 then
     echo "Creating node config" $config_node_file
-    node_config=$(paw_node --generate_config node)
+    node_config=$(arcadia_node --generate_config node)
     node_config=$(echo "$node_config" | sed "s/\[rpc\]/[rpc]\n\nenable = true/g")
     node_config=$(echo "$node_config" | sed "s/\#enable_voting\ \=\ false/enable_voting = true/g")
     echo "$node_config" > $config_node_file
@@ -104,13 +104,13 @@ rpc_node_file=$datadir"/config-rpc.toml"
 if [ ! -f $rpc_node_file ]
 then
     echo "Creating rpc config" $rpc_node_file
-    rpc_config=$(paw_node --generate_config rpc)
+    rpc_config=$(arcadia_node --generate_config rpc)
     rpc_config=$(echo "$rpc_config" | sed "s/\#enable_control\ \=\ false/enable_control = true/g")
     echo "$rpc_config" > $rpc_node_file
 fi
 
 #Start daemon
-paw_node --daemon --data_path=$datadir > /dev/null  2>&1 &
+arcadia_node --daemon --data_path=$datadir > /dev/null  2>&1 &
 if [ $? -ne 0 ]
 then
   echo "Could not start daemon"
@@ -131,16 +131,16 @@ then
     echo "Failed to create account"
     exit 1
 fi
-echo "Your tribe has been created ${account} please send at least 0.01 PAW to this account to open it. Your tribe will start voting once its open and has over 1000 PAW delegated."
+echo "Your tribe has been created ${account} please send at least 0.01 ADIA to this account to open it. Your tribe will start voting once its open and has over 1000 ADIA delegated."
 
 #Disable enable control
-rpc_config=$(paw_node --generate_config rpc)
+rpc_config=$(arcadia_node --generate_config rpc)
 echo "$rpc_config" > $rpc_node_file
 
 #Restart daemon
-killall -9 paw_node > /dev/null 2>&1
+killall -9 arcadia_node > /dev/null 2>&1
 sleep 5
-paw_node --daemon --data_path=$datadir > /dev/null  2>&1 &
+arcadia_node --daemon --data_path=$datadir > /dev/null  2>&1 &
 if [ $? -ne 0 ]
 then
   echo "Could not start daemon"
@@ -150,7 +150,7 @@ echo "Node is running"
 echo "Node address: ${ip}:7045"
 echo "\n====\n"
 
-private_key=$(paw_node --wallet_decrypt_unsafe --wallet=${wallet} | sed "s/\ P/\nP/g")
+private_key=$(arcadia_node --wallet_decrypt_unsafe --wallet=${wallet} | sed "s/\ P/\nP/g")
 echo "Please store your private key safely and confidentially!"
 echo "${private_key}"
 ```

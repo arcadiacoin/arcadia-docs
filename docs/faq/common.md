@@ -12,7 +12,7 @@ Additional workers and machines that do the work generation can be set in the co
 
 ## Wallet /  Account / Private Key
 
-Can I create multiple accounts with a key? No every private key created with key_create is one PAW (paw_1231..) account.
+Can I create multiple accounts with a key? No every private key created with key_create is one Arcadia (adia_1231..) account.
 
 One wallet can hold thousands of private keys. Using one wallet for every account is not good practice.
 

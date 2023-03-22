@@ -1,50 +1,50 @@
 ---
 title: Start running a node
-description: Reference on how to get started on running PAW
+description: Reference on how to get started on running an Arcadia node
 sidebarDepth: 2
 ---
 
 # Start
 
-This is a summary on how to get started running and using a PAW node.
+This is a summary on how to get started running and using a Arcadia node.
 
 
 ## Install
 
-Build PAW from source or get the latest linux build from:
+Build Arcadia from source or get the latest linux build from:
 
-https://github.com/paw-digital/paw-node/releases
+https://github.com/arcadiacoin/arcadia-node/releases
 
 ## Adjusting config
 
 First create a blank config file:
 ```
-./paw_node --generate_config rpc > config-rpc.toml
-./paw_node --generate_config node > config-node.toml
-mkdir ~/Paw/
-mv config-rpc.toml ~/Paw/config-rpc.toml
-mv config-node.toml ~/Paw/config-node.toml
+./arcadia_node --generate_config rpc > config-rpc.toml
+./arcadia_node --generate_config node > config-node.toml
+mkdir ~/Arcadia/
+mv config-rpc.toml ~/Arcadia/config-rpc.toml
+mv config-node.toml ~/Arcadia/config-node.toml
 ```
 
-To enable RPC control uncomment and modify the following 2 lines in ~/Paw/config-rpc.toml
+To enable RPC control uncomment and modify the following 2 lines in ~/Arcadia/config-rpc.toml
 
 ```
 address="::ffff:127.0.0.1"
 enable_control = true
 ```
 
-as well as the following line under the [RPC] category in ~/Paw/config-node.toml
+as well as the following line under the [RPC] category in ~/Arcadia/config-node.toml
 
 ```
 enable = true
 ```
 
 
-To have the node automatically receive PAW the receive_minimum needs be uncommented and set in ~/Paw/config-node.toml with:
+To have the node automatically receive ADIA the receive_minimum needs be uncommented and set in ~/Arcadia/config-node.toml with:
 ```
 receive_minimum = "10000000000000000000000000000000"
 ```
-this would set the minimum amount to 10,000 PAW ( amount is the RAW unit ). Any incoming transaction with a lower amount will not be received.
+this would set the minimum amount to 0.01 ADIA ( amount is the RAW unit ). Any incoming transaction with a lower amount will not be received.
 
 ## Ports
 
@@ -56,12 +56,12 @@ The port 7045 should be open. That's the peering port.
 
 Start the node as a daemon with:
 ```
-./paw_node --daemon
+./arcadia_node --daemon
 ```
 
 or to have it run in the background:
 ```
-./paw_node --daemon > /dev/null 2> /dev/null &
+./arcadia_node --daemon > /dev/null 2> /dev/null &
 ```
 
 
@@ -79,17 +79,17 @@ curl -d '{ "action" : "telemetry" }' 127.0.0.1:7046
 
 ### To validate whether or not an account is valid:
 ```
-curl -d '{ "action" : "validate_account_number", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+curl -d '{ "action" : "validate_account_number", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
 ### To check the balance of an account:
 ```
-curl -d '{ "action" : "account_balance", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+curl -d '{ "action" : "account_balance", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
 ### To get the account history:
 ```
-curl -d '{ "action" : "account_history", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
+curl -d '{ "action" : "account_history", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
 ### To get the info of a single block:
@@ -97,14 +97,14 @@ curl -d '{ "action" : "account_history", "account": "paw_1mdtea7kixj8w4at35igo17
 curl -d '{ "action": "block_info", "json_block": "true", "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" }' 127.0.0.1:7046
 ```
 
-### To convert from PAW to the RAW unit:
+### To convert from ADIA to the RAW unit:
 ```
-curl -d '{ "action" : "raw_to_paw", "amount": "10000000000000000000000000000000" }' 127.0.0.1:7046
+curl -d '{ "action" : "raw_to_adia", "amount": "10000000000000000000000000000000" }' 127.0.0.1:7046
 ```
 
-### To convert from RAW to the PAW unit:
+### To convert from RAW to the ADIA unit:
 ```
-curl -d '{ "action" : "paw_to_raw", "amount": "10000" }' 127.0.0.1:7046
+curl -d '{ "action" : "adia_to_raw", "amount": "10000" }' 127.0.0.1:7046
 ```
 
 ## Sending a transaction
@@ -118,7 +118,7 @@ this will create a new wallet and return a wallet ID
 
 ### 2) Backing up the wallet seed with:
 ```
-./paw_node --wallet_decrypt_unsafe --wallet E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446
+./arcadia_node --wallet_decrypt_unsafe --wallet E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446
 ```
 this will return the wallet seed
 
@@ -126,20 +126,20 @@ this will return the wallet seed
 ```
 curl -d '{ "action": "account_create", "wallet": "E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446" }' 'http://127.0.0.1:7076'
 ```
-this will create and return a new account ( paw address )
+this will create and return a new account ( adia address )
 
 ### To send a transaction:
 ```
-curl -d '{ "action": "send", "wallet": "343EB24C735CCF60E12B9BD4EA70226519F438E0E9A8D1EDB4D2DE8E74D96637", "source": "paw_3n7k4zxf8qif4f9k61if6oimsfdiobfytynmaagx95fwzdcgbct7i3xmndba", "destination": "paw_1yj4r1ocw81pitn1xz5mzxuthne3g4ezfxg9n6sbtzcz6jdtggxo9wxieysx", "amount": "2700000000000000000000000000", "id": "f4c07f4e73fb4091fdb47e0e3bxa" }'  127.0.0.1:7046
+curl -d '{ "action": "send", "wallet": "343EB24C735CCF60E12B9BD4EA70226519F438E0E9A8D1EDB4D2DE8E74D96637", "source": "adia_3n7k4zxf8qif4f9k61if6oimsfdiobfytynmaagx95fwzdcgbct7i3xmndba", "destination": "adia_1yj4r1ocw81pitn1xz5mzxuthne3g4ezfxg9n6sbtzcz6jdtggxo9wxieysx", "amount": "2700000000000000000000000000", "id": "f4c07f4e73fb4091fdb47e0e3bxa" }'  127.0.0.1:7046
 ```
 
 wallet = the wallet containing the account
 
-source = the account to send PAW from
+source = the account to send ADIA from
 
-destination = the account to send PAW to
+destination = the account to send ADIA to
 
-amount = PAW amount in RAW unit
+amount = ADIA amount in RAW unit
 
 id = unique identifier for every transaction is required and helps preventing sending a transaction twice by accident
 
@@ -147,17 +147,17 @@ id = unique identifier for every transaction is required and helps preventing se
 ## Receive a transaction
 
 
-If receive_minimum has been set the node will automatically receive incoming PAW.
+If receive_minimum has been set the node will automatically receive incoming ADIA.
 
-In case you rather want to do it manually or receive PAW that fall below the "receive_minimum" you can check for receivable PAW with:
+In case you rather want to do it manually or receive ADIA that fall below the "receive_minimum" you can check for receivable ADIA with:
 ```
-curl -d '{"action":"receivable", "account":"paw_1qfe5u7bcm7qrpp9rhk9p7wyqw316om1ts7s4gm466nwy6ueniik1gzwcno8"}' 127.0.0.1:7046
+curl -d '{"action":"receivable", "account":"adia_1qfe5u7bcm7qrpp9rhk9p7wyqw316om1ts7s4gm466nwy6ueniik1gzwcno8"}' 127.0.0.1:7046
 ```
-this will return a list of incoming PAW ready to be received ( their block hashes )
+this will return a list of incoming ADIA ready to be received ( their block hashes )
 
 Each transaction ( block ) can be received with:
 ```
-curl -g -d '{ "action": "receive", "wallet": "7A684D6DF9852D0826BA208FA2BE4BD673C049992CA229204F0E98B4A89D8F6X", "account": "paw_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb", "block": "634BFB577065CDE5C0F6DD2074CC7E28B8D4EE4691B37647852376203C6AED6C" }' 127.0.0.1:7046
+curl -g -d '{ "action": "receive", "wallet": "7A684D6DF9852D0826BA208FA2BE4BD673C049992CA229204F0E98B4A89D8F6X", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb", "block": "634BFB577065CDE5C0F6DD2074CC7E28B8D4EE4691B37647852376203C6AED6C" }' 127.0.0.1:7046
 ```
 
 
@@ -183,9 +183,9 @@ Running a dedicated worker is optional but something to be considered if the amo
 
 # Tribe
 
-It's recommended to run the node as a voting node ( tribe ). Voting nodes tend receive broadcasted transactions faster than non-voting ones when they have 0.1% of the total PAW supply delegated to them but voting can take up more CPU resources.
+It's recommended to run the node as a voting node ( tribe ). Voting nodes tend receive broadcasted transactions faster than non-voting ones when they have 0.1% of the total ADIA supply delegated to them but voting can take up more CPU resources.
 
-To have the node act also as a voting node uncomment and set the following line in ~/Paw/config-node.toml:
+To have the node act also as a voting node uncomment and set the following line in ~/Arcadia/config-node.toml:
 ```
 enable_voting = true
 ```
@@ -195,7 +195,7 @@ ___
 
 Another source for further documentation is at:
 
-https://docs.nano.org/ ( the crypto-currency PAW derived of )
+https://docs.nano.org/ ( the crypto-currency Arcadia derived of )
 
-Documentation on how to to build from source can also be taken from here but needs to be slightly adjusted to work with PAW (e.g. the github source used for build):
+Documentation on how to to build from source can also be taken from here but needs to be slightly adjusted to work with Arcadia (e.g. the github source used for build):
 https://docs.nano.org/integration-guides/build-options/
