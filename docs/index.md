@@ -1,4 +1,4 @@
-# arcadiacoin.net
+# Arcadia
 
 
 ## Setting up a node quick

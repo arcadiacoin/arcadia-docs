@@ -2,7 +2,7 @@ const MarkdownInclude = require('markdown-it-include')
 
 export default {
   lang: 'en-US',
-  title: 'arcadiacoin.net Documentation',
+  title: 'Arcadia Documentation',
   description: 'Learn how to contribute to the network or develop your own applications on top of Arcadia.',
 
   head: [
