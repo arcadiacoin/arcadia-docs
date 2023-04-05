@@ -90,7 +90,7 @@ function curl ($post) {
 	return $output;
 }
 
-// After someone sent you NANO it's in a pending/receivable state until it's being confirmed by the recipient
+// After someone sent you ADIA it's in a pending/receivable state until the recipient decides to receive it
 
 // Get a list of receivable transactions
 $post = '{"action": "receivable", "account": "adia_1111111111111111111111111111111111111111111111111117353trpda"}';

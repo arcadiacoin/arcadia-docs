@@ -1,8 +1,13 @@
 @tailwind utilities;
 
 :root {
-  --c-brand: #00c3b6;
-  --c-brand-light: #00c3b6;
+  --vp-c-brand: #cd8f1d;
+  --vp-c-brand-light: #cdc81d;
+  --c-text: #aaa;
+  --c-text-light: #bbb;
+  --c-text-lighter: #ccc;
+  --c-bg: #1e1e1e;
+  --c-bg-accent: #333;
 }
 
 html,
@@ -57,13 +62,4 @@ li {
 a.nav-bar-title
 {
 	color: #fff !important;
-}
-header.nav-bar
-{
-	background: linear-gradient(45deg, #e21d80, #1dc8cd);
-}
-
-aside.sidebar
-{
-	background: #eff5f5 !important;
 }

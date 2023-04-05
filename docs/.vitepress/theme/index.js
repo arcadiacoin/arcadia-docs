@@ -5,7 +5,6 @@ import './theme.css'
 
 import CodeGroup from './components/global/CodeGroup.ts'
 import CodeGroupItem from './components/global/CodeGroupItem.vue'
-import TableOfContents from './components/global/toc.vue'
 
 export default {
   ...DefaultTheme,
@@ -13,6 +12,5 @@ export default {
   enhanceApp({ app }) {
     app.component('CodeGroup', CodeGroup)
     app.component('CodeGroupItem', CodeGroupItem)
-    app.component('TableOfContents', TableOfContents)
   }
 }

@@ -1,10 +1,11 @@
 const MarkdownInclude = require('markdown-it-include')
+const { SearchPlugin } = require('vitepress-plugin-search')
 
 export default {
   lang: 'en-US',
-  title: 'arcadiacoin.net Documentation',
-  description: 'Learn how to contribute to the network or develop your own applications on top of Arcadia.',
-
+  title: 'Arcadia Developer Documentation',
+  description: 'A documentation for Arcadia developers',
+  appearance: 'dark',
   head: [
     [
       'script',
@@ -20,7 +21,8 @@ export default {
     editLinks: true,
     editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
-
+	sidebarDepth: 2,
+	outline: [2,4],
     nav: [],
 
     sidebar: {
@@ -36,6 +38,10 @@ export default {
         bracesAreOptional: true
       })
     }
+  },
+  
+  vite: {
+    plugins: [SearchPlugin()],
   }
 }
 
@@ -43,19 +49,19 @@ function getNodeSidebar() {
   return [
     {
       text: 'Home',
-      children: [
+      items: [
         { text: 'Install', link: '/' },
       ]
     },
     {
       text: 'Start',
-      children: [
+      items: [
         { text: 'Beginner Examples', link: '/beginner/examples' },
       ]
     },
     {
       text: 'Running a node',
-      children: [
+      items: [
         { text: 'Start', link: '/node/start' },
         { text: 'RPC Commands', link: '/node/rpc' },
         { text: 'MacOS Build', link: '/node/macos-build' },
@@ -63,7 +69,7 @@ function getNodeSidebar() {
     },
     {
       text: 'FAQ',
-      children: [
+      items: [
         { text: 'Common Questions', link: '/faq/common' },
       ]
     }

@@ -6,7 +6,6 @@ const { Layout } = DefaultTheme
 
 <template>
   <div class="relative mx-auto xl:max-w-screen-xl overflow:hidden">
-    <TableOfContents />
     <Layout>
       <template #sidebar-top>
       </template>

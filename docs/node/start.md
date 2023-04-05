@@ -67,42 +67,42 @@ or to have it run in the background:
 
 ## RPC examples
 
-### To receive the total block count of the ledger:
+### Total block count of the ledger:
 ```
 curl -d '{ "action" : "block_count" }' 127.0.0.1:7046
 ```
 
-### To get sync status and and further network information:
+### Sync status and and network information:
 ```
 curl -d '{ "action" : "telemetry" }' 127.0.0.1:7046
 ```
 
-### To validate whether or not an account is valid:
+### Validate account number / address:
 ```
 curl -d '{ "action" : "validate_account_number", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### To check the balance of an account:
+### Check balance:
 ```
 curl -d '{ "action" : "account_balance", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### To get the account history:
+### Account history:
 ```
 curl -d '{ "action" : "account_history", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### To get the info of a single block:
+### Details on a transaction (block):
 ```
 curl -d '{ "action": "block_info", "json_block": "true", "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" }' 127.0.0.1:7046
 ```
 
-### To convert from ADIA to the RAW unit:
+### Convert from ADIA to the RAW unit:
 ```
 curl -d '{ "action" : "raw_to_adia", "amount": "10000000000000000000000000000000" }' 127.0.0.1:7046
 ```
 
-### To convert from RAW to the ADIA unit:
+### Convert from RAW to the ADIA unit:
 ```
 curl -d '{ "action" : "adia_to_raw", "amount": "10000" }' 127.0.0.1:7046
 ```
@@ -181,9 +181,9 @@ Not running a dedicated worker can have the node become unresponsive for duratio
 Running a dedicated worker is optional but something to be considered if the amount of incoming and outgoing transactions is getting too high.
 
 
-# Tribe
+# Masternode
 
-It's recommended to run the node as a voting node ( tribe ). Voting nodes tend receive broadcasted transactions faster than non-voting ones when they have 0.1% of the total ADIA supply delegated to them but voting can take up more CPU resources.
+It's recommended to run the node as a voting node ( masternode ). Voting nodes tend receive broadcasted transactions faster than non-voting ones when they have 0.1% of the total ADIA supply delegated to them but voting can take up more CPU resources.
 
 To have the node act also as a voting node uncomment and set the following line in ~/Arcadia/config-node.toml:
 ```
