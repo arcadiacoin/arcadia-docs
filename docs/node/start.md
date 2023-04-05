@@ -67,42 +67,42 @@ or to have it run in the background:
 
 ## RPC examples
 
-### Total block count of the ledger:
+### Total block count of the ledger
 ```
 curl -d '{ "action" : "block_count" }' 127.0.0.1:7046
 ```
 
-### Sync status and and network information:
+### Sync status and and network information
 ```
 curl -d '{ "action" : "telemetry" }' 127.0.0.1:7046
 ```
 
-### Validate account number / address:
+### Validate account number / address
 ```
 curl -d '{ "action" : "validate_account_number", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### Check balance:
+### Check balance
 ```
 curl -d '{ "action" : "account_balance", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### Account history:
+### Account history
 ```
 curl -d '{ "action" : "account_history", "account": "adia_1mdtea7kixj8w4at35igo17mqbdub3gfouumwbhqmqgzmepwjz67h96piegb" }' 127.0.0.1:7046
 ```
 
-### Details on a transaction (block):
+### Details on a transaction (block)
 ```
 curl -d '{ "action": "block_info", "json_block": "true", "hash": "87434F8041869A01C8F6F263B87972D7BA443A72E0A97D7A3FD0CCC2358FD6F9" }' 127.0.0.1:7046
 ```
 
-### Convert from ADIA to the RAW unit:
+### Convert from ADIA to the RAW unit
 ```
 curl -d '{ "action" : "raw_to_adia", "amount": "10000000000000000000000000000000" }' 127.0.0.1:7046
 ```
 
-### Convert from RAW to the ADIA unit:
+### Convert from RAW to the ADIA unit
 ```
 curl -d '{ "action" : "adia_to_raw", "amount": "10000" }' 127.0.0.1:7046
 ```
@@ -112,7 +112,7 @@ curl -d '{ "action" : "adia_to_raw", "amount": "10000" }' 127.0.0.1:7046
 
 ### 1) A wallet is needed
 ```
-curl -d '{ "action": "wallet_create"}' 'http://127.0.0.1:7076'
+curl -d '{ "action": "wallet_create"}' 'http://127.0.0.1:7046'
 ```
 this will create a new wallet and return a wallet ID
 
@@ -124,7 +124,7 @@ this will return the wallet seed
 
 ### 3) An account needs to be created
 ```
-curl -d '{ "action": "account_create", "wallet": "E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446" }' 'http://127.0.0.1:7076'
+curl -d '{ "action": "account_create", "wallet": "E3E67B1B3FFA46F606240F1D0B964873D42E9C6D0B7A0BF376A2E128541CC446" }' 'http://127.0.0.1:7046'
 ```
 this will create and return a new account ( adia address )
 
